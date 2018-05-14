@@ -40,7 +40,7 @@ public class LoginController {
                     break;
             }
         } else {
-            lblInfo.setText("invalid login or password");
+            lblInfo.setText("invalid login or password!");
         }
     }
 }
