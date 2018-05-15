@@ -2,15 +2,15 @@ package sample.model.pojo;
 
 public class ReceiptData {
     private int id;
-    private int idReceipt;
-    private int idStock;
     private int quantity;
     private double price;
+    private int idReceipt;
+    private int idStock;
 
     public ReceiptData() {
     }
 
-    public ReceiptData(int id, int idReceipt, int idStock, int quantity, double price) {
+    public ReceiptData(int id, int quantity, double price, int idReceipt, int idStock) {
         this.id = id;
         this.idReceipt = idReceipt;
         this.idStock = idStock;
