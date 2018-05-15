@@ -1,4 +1,4 @@
 package sample.ui.stockWorker;
 
-public class StockWorkerController {
+public class StockWorkerController  {
 }
