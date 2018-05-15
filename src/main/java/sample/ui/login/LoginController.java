@@ -28,11 +28,15 @@ public class LoginController {
         StaffDao sd = new StaffDaoImpl();
         Staff staff = sd.getStaffByLoginPassword(txtLogin.getText(), txtPassword.getText());
         if (staff != null) {
+            //idRole : {admin:1, manager:2, stockworker:3}
             switch (staff.getIdRole()) {
                 case 1:
                     lblInfo.setText("very good! you are system admin!" + txtLogin.getText());
                     break;
                 case 2:
+                    lblInfo.setText("very good! you are manager!" + txtLogin.getText());
+                    break;
+                case 3:
                     lblInfo.setText("very good! you are stock worker!" + txtLogin.getText());
                     break;
                 default:
