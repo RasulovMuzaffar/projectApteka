@@ -9,8 +9,8 @@ public class DatabaseHandler {
     private static DatabaseHandler handler = null;
 
     private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/apteka?useSSL=false";
-    private static final String USER = "test";
-    private static final String PASSWORD = "test";
+    private static final String USER = "root";
+    private static final String PASSWORD = "root";
     private static Connection conn = null;
     private static Statement stmt = null;
 
