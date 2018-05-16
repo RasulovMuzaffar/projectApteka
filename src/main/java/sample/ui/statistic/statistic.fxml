@@ -28,7 +28,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <Pane layoutY="66.0" prefHeight="653.0" prefWidth="279.0" styleClass="parentColor" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="66.0">
+        <Pane layoutY="66.0" prefHeight="653.0" prefWidth="280.0" style="-fx-background-color: #505050;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="66.0">
             <children>
                 <JFXButton fx:id="statistic" alignment="TOP_LEFT" layoutX="1.0" layoutY="34.0" prefHeight="35.0" prefWidth="279.0" stylesheets="@../style.css" text="Statistica" textFill="WHITE">
                     <font>
@@ -72,7 +72,7 @@
                 </JFXButton>
             </children>
         </Pane>
-        <Label layoutX="343.0" layoutY="146.0" prefHeight="36.0" prefWidth="430.0" text="Statistica">
+        <Label layoutX="343.0" layoutY="146.0" prefHeight="36.0" prefWidth="430.0" text="Statistica" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="120.0">
             <font>
                 <Font name="Roboto Bold" size="32.0" />
             </font>
@@ -82,8 +82,8 @@
                 <Font name="Roboto" size="15.0" />
             </font>
         </Label>
-      <Button alignment="TOP_LEFT" layoutX="340.0" layoutY="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" text="kunlik" />
-      <BarChart layoutX="340.0" layoutY="206.0" prefHeight="248.0" prefWidth="265.0">
+      <Button alignment="TOP_LEFT" layoutX="340.0" layoutY="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" text="kunlik" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="65.0" />
+      <BarChart layoutX="340.0" layoutY="206.0" prefHeight="248.0" prefWidth="265.0" AnchorPane.leftAnchor="340.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

@@ -27,7 +27,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <Pane layoutY="66.0" prefHeight="653.0" prefWidth="279.0" styleClass="parentColor" stylesheets="@../../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="66.0">
+        <Pane layoutY="66.0" prefHeight="653.0" prefWidth="280.0" style="-fx-background-color: #505050;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="66.0">
             <children>
                 <JFXButton fx:id="statistic" alignment="TOP_LEFT" layoutX="1.0" layoutY="34.0" prefHeight="35.0" prefWidth="279.0" stylesheets="@../style.css" text="Statistica" textFill="WHITE">
                     <font>
@@ -71,11 +71,6 @@
                 </JFXButton>
             </children>
         </Pane>
-        <Label layoutX="340.0" layoutY="146.0" prefHeight="36.0" prefWidth="430.0" text="Kirim">
-            <font>
-                <Font name="Roboto Bold" size="32.0" />
-            </font>
-        </Label>
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="726.0" layoutY="214.0" prefHeight="35.0" prefWidth="47.0">
             <font>
                 <Font name="Roboto" size="15.0" />
@@ -86,8 +81,12 @@
                 <Font name="Roboto Bold" size="16.0" />
             </font>
         </JFXButton>
-        <Button alignment="TOP_LEFT" layoutX="340.0" layoutY="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" text="kunlik" />
-      <TableView layoutX="340.0" layoutY="242.0" prefHeight="471.0" prefWidth="636.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="242.0">
+      <Label layoutX="350.0" layoutY="135.0" prefHeight="36.0" prefWidth="430.0" text="Kirim" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font name="Roboto Bold" size="32.0" />
+         </font>
+      </Label>
+      <TableView layoutX="350.0" layoutY="212.0" prefHeight="500.0" prefWidth="720.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="200.0">
          <columns>
             <TableColumn prefWidth="55.0" text="NO" />
             <TableColumn prefWidth="269.0" text="Mahsulot nomi" />
@@ -96,5 +95,6 @@
             <TableColumn prefWidth="104.0" text="Jami" />
          </columns>
       </TableView>
+      <Button alignment="TOP_LEFT" layoutX="350.0" layoutY="78.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" text="kunlik" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="65.0" />
     </children>
 </AnchorPane>
