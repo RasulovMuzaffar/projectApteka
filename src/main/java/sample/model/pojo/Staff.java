@@ -1,28 +1,48 @@
 package sample.model.pojo;
 
+import javax.persistence.*;
+import java.io.Serializable;
 
-public class Staff {
+@Entity
+@Table(name = "spr_staff")
+public class Staff implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "login")
     private String login;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "email")
     private String email;
-    private int idRole;
+
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Role role;
 
     public Staff() {
     }
 
-    public Staff(int id, String firstName, String lastName, String login, String password, String phone, String email, int idRole) {
-        this.id = id;
+    public Staff(String firstName, String lastName, String login, String password, String phone, String email, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
         this.password = password;
         this.phone = phone;
         this.email = email;
-        this.idRole = idRole;
+        this.role = role;
     }
 
     public int getId() {
@@ -81,12 +101,12 @@ public class Staff {
         this.email = email;
     }
 
-    public int getIdRole() {
-        return idRole;
+    public Role getIdRole() {
+        return role;
     }
 
-    public void setIdRole(int idRole) {
-        this.idRole = idRole;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
@@ -99,7 +119,7 @@ public class Staff {
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", idRole=" + idRole +
+                ", role=" + role +
                 '}';
     }
 }
