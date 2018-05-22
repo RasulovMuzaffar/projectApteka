@@ -25,7 +25,7 @@ public class LoginController {
 
     public void btnLoginAction(ActionEvent event) throws IOException {
 //        StaffDao sd = new StaffDaoImpl(sessionFactory);
-//        Staff staff = sd.getStaffByLoginPassword(txtLogin.getText(), txtPassword.getText());
+//        Staff staff = sd.findStaffByLoginPassword(txtLogin.getText(), txtPassword.getText());
 //        Stage stage = (Stage) btnLogin.getScene().getWindow();
 //        System.out.println(staff.toString());
 //        if (staff != null) {

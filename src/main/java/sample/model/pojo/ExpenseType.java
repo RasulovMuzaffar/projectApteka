@@ -3,13 +3,20 @@ package sample.model.pojo;
 public class ExpenseType {
     private int id;
     private String name;
+    private String description;
 
     public ExpenseType() {
     }
 
-    public ExpenseType(int id, String name) {
+    public ExpenseType(int id, String name, String description) {
         this.id = id;
         this.name = name;
+        this.description = description;
+    }
+
+    public ExpenseType(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
     public int getId() {
@@ -28,11 +35,20 @@ public class ExpenseType {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "ExpenseType{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

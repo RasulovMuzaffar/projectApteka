@@ -4,6 +4,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="hibernate.cfg.xml" value="24a399e3-e63a-44b7-a4cd-26d1ff296520" />
           <unit-entry name="sample:hiberConfig:hibernate.cfg.xml" />
           <unit-entry name="sample:hibernate.cfg.xml" />
         </datasource-map>
@@ -36,6 +37,8 @@
     <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.3.0" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate:3.6.0.Beta2" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx:8.9" level="project" />
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2" level="project" />
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx-icons525:4.2.0-9.1.2" level="project" />

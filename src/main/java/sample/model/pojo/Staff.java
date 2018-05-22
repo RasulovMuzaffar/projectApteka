@@ -1,48 +1,39 @@
 package sample.model.pojo;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "spr_staff")
-public class Staff implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Staff implements Serializable {
     private int id;
-
-    @Column(name = "first_name")
     private String firstName;
-
-    @Column(name = "last_name")
     private String lastName;
-
-    @Column(name = "login")
     private String login;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "phone")
     private String phone;
-
-    @Column(name = "email")
     private String email;
-
-    @JoinColumn(name = "role_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Role role;
+    private int idRole;
 
     public Staff() {
     }
 
-    public Staff(String firstName, String lastName, String login, String password, String phone, String email, Role role) {
+    public Staff(int id, String firstName, String lastName, String login, String password, String phone, String email, int idRole) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
         this.password = password;
         this.phone = phone;
         this.email = email;
-        this.role = role;
+        this.idRole = idRole;
+    }
+
+    public Staff(String firstName, String lastName, String login, String password, String phone, String email, int idRole) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.login = login;
+        this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.idRole = idRole;
     }
 
     public int getId() {
@@ -101,12 +92,12 @@ public class Staff implements Serializable{
         this.email = email;
     }
 
-    public Role getIdRole() {
-        return role;
+    public int getIdRole() {
+        return idRole;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setIdRole(int idRole) {
+        this.idRole = idRole;
     }
 
     @Override
@@ -119,7 +110,7 @@ public class Staff implements Serializable{
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", role=" + role +
+                ", idRole=" + idRole +
                 '}';
     }
 }

@@ -1,23 +1,29 @@
 package sample.model.pojo;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Expense {
+public class Expense implements Serializable{
     private int id;
     private Timestamp date;
     private double amount;
-    private String descripton;
+    private String description;
     private int idExpType;
     private int idStaff;
 
-    public Expense() {
-    }
-
-    public Expense(int id, Timestamp date, double amount, String descripton, int idExpType, int idStaff) {
+    public Expense(int id, Timestamp date, double amount, String description, int idExpType, int idStaff) {
         this.id = id;
         this.date = date;
         this.amount = amount;
-        this.descripton = descripton;
+        this.description = description;
+        this.idExpType = idExpType;
+        this.idStaff = idStaff;
+    }
+
+    public Expense(Timestamp date, double amount, String description, int idExpType, int idStaff) {
+        this.date = date;
+        this.amount = amount;
+        this.description = description;
         this.idExpType = idExpType;
         this.idStaff = idStaff;
     }
@@ -46,12 +52,12 @@ public class Expense {
         this.amount = amount;
     }
 
-    public String getDescripton() {
-        return descripton;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripton(String descripton) {
-        this.descripton = descripton;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getIdExpType() {
@@ -76,7 +82,7 @@ public class Expense {
                 "id=" + id +
                 ", date=" + date +
                 ", amount=" + amount +
-                ", descripton='" + descripton + '\'' +
+                ", description='" + description + '\'' +
                 ", idExpType=" + idExpType +
                 ", idStaff=" + idStaff +
                 '}';
