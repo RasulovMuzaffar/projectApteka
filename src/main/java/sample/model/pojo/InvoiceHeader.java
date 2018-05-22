@@ -73,7 +73,7 @@ public class InvoiceHeader {
 
     @Override
     public String toString() {
-        return "InvoiceHeader{" +
+        return "InvoiceHeaderDao{" +
                 "id=" + id +
                 ", numb='" + numb + '\'' +
                 ", date=" + date +

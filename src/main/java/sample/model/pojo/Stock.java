@@ -5,6 +5,7 @@ import java.util.Date;
 public class Stock {
     private int id;
     private Date validaty;
+    private double price;
     private int quantity;
     private String placeStorage;
     private double salePrice;
@@ -16,9 +17,10 @@ public class Stock {
     public Stock() {
     }
 
-    public Stock(int id, Date validaty, int quantity, String placeStorage, double salePrice, int stockBalance, int idInvoice, int idMedicine, int idManifacturer) {
+    public Stock(int id, Date validaty, double price, int quantity, String placeStorage, double salePrice, int stockBalance, int idInvoice, int idMedicine, int idManifacturer) {
         this.id = id;
         this.validaty = validaty;
+        this.price = price;
         this.quantity = quantity;
         this.placeStorage = placeStorage;
         this.salePrice = salePrice;
@@ -42,6 +44,14 @@ public class Stock {
 
     public void setValidaty(Date validaty) {
         this.validaty = validaty;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getQuantity() {
@@ -105,6 +115,7 @@ public class Stock {
         return "Stock{" +
                 "id=" + id +
                 ", validaty=" + validaty +
+                ", price=" + price +
                 ", quantity=" + quantity +
                 ", placeStorage='" + placeStorage + '\'' +
                 ", salePrice=" + salePrice +
