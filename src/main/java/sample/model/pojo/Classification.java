@@ -2,14 +2,14 @@ package sample.model.pojo;
 
 public class Classification {
     private int id;
-    private String clas;
+    private String name;
 
     public Classification() {
     }
 
-    public Classification(int id, String clas) {
+    public Classification(int id, String name) {
         this.id = id;
-        this.clas = clas;
+        this.name = name;
     }
 
     public int getId() {
@@ -20,19 +20,19 @@ public class Classification {
         this.id = id;
     }
 
-    public String getClas() {
-        return clas;
+    public String getName() {
+        return name;
     }
 
-    public void setClas(String clas) {
-        this.clas = clas;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Classification{" +
                 "id=" + id +
-                ", clas='" + clas + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

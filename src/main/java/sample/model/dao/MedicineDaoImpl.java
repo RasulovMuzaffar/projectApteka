@@ -156,7 +156,7 @@ public class MedicineDaoImpl implements MedicineDao {
     @Override
     public boolean updateMedicine(Medicine medicine) {
         String query = "UPDATE spr_medicine SET name_ru = ?, name_en = ?, bar_code = ?," +
-                " id_class = ?, id_recomend = ?)" +
+                " id_class = ?, id_recomend = ?" +
                 " WHERE id = ?";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
