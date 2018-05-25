@@ -1,8 +1,9 @@
 package sample.model.pojo;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class ReceiptHeader {
+public class ReceiptHeader implements Serializable {
     private int id;
     private int number;
     private Timestamp date;
@@ -16,6 +17,11 @@ public class ReceiptHeader {
         this.id = id;
         this.number = number;
         this.date = date;
+        this.idStaff = idStaff;
+        this.idUser = idUser;
+    }
+    public ReceiptHeader(int number, int idStaff, int idUser) {
+        this.number = number;
         this.idStaff = idStaff;
         this.idUser = idUser;
     }

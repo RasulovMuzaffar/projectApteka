@@ -7,12 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReceiptDataDaoImpl implements ReceiptDataDao {
     @Override
     public List<ReceiptData> allReceiptData() {
-        List<ReceiptData> list = null;
+        List<ReceiptData> list = new ArrayList<>();
         String query = "SELECT id, quantity, price, id_receipt, id_stock FROM receipt_data";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
@@ -64,6 +65,7 @@ public class ReceiptDataDaoImpl implements ReceiptDataDao {
             ps.setInt(2, receiptData.getIdStock());
             ps.setInt(3, receiptData.getQuantity());
             ps.setDouble(4, receiptData.getPrice());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
             return false;

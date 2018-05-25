@@ -13,4 +13,6 @@ public interface ReceiptHeaderDao {
 
     boolean updateReceiptHeader (ReceiptHeader receiptHeader);
 
+    int maxSize();
+
 }

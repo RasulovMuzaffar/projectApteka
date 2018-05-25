@@ -7,12 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecomendationDaoImpl implements RecomendationDao {
     @Override
     public List<Recomendation> allRecom() {
-        List<Recomendation> list = null;
+        List<Recomendation> list = new ArrayList<>();
         String query = "SELECT id, recomendation FROM recomendations";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();

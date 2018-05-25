@@ -1,6 +1,8 @@
 package sample.model.pojo;
 
-public class Recomendation {
+import java.io.Serializable;
+
+public class Recomendation implements Serializable {
     private int id;
     private String text;
 

@@ -14,8 +14,6 @@ import java.util.List;
 public class RoleDaoImpl implements RoleDao {
     @Override
     public List<Role> allRoles() {
-        StaffDao sd = new StaffDaoImpl();
-
         String query = "SELECT id, role FROM spr_role";
         List<Role> list = new ArrayList<>();
         DatabaseHandler databaseHandler = new DatabaseHandler();
@@ -49,7 +47,39 @@ public class RoleDaoImpl implements RoleDao {
         } catch (Exception e) {
             System.out.println(e);
         }
-
         return role;
+    }
+
+    @Override
+    public boolean insertRole(Role role) {
+        String query = "INSERT INTO spr_role (role)" +
+                " VALUES (?)";
+        DatabaseHandler databaseHandler = new DatabaseHandler();
+        try (Connection connection = databaseHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);) {
+            ps.setString(1, role.getRole());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean updateRole(Role role) {
+        String query = "UPDATE spr_role SET role = ? " +
+                "WHERE id = ?";
+        DatabaseHandler databaseHandler = new DatabaseHandler();
+        try (Connection connection = databaseHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);) {
+            ps.setString(1, role.getRole());
+            ps.setInt(2, role.getId());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
     }
 }

@@ -7,12 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClassificationDaoImpl implements ClassificationDao {
     @Override
     public List<Classification> allClassification() {
-        List<Classification> list = null;
+        List<Classification> list = new ArrayList<>();
         String query = "SELECT id, name FROM spr_classification";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();

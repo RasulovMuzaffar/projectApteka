@@ -15,7 +15,10 @@ public class Main extends Application {
 //        Parent root = FXMLLoader.load(getClass().getResource("/sample/ui/statistic/statistic.fxml"));
         primaryStage.setTitle("Authorization");
         primaryStage.setScene(new Scene(root, 640,450));
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
+
+//        primaryStage.initStyle(StageStyle.TRANSPARENT);
+
+
 //        primaryStage.setMaximized(true);
         //primaryStage.setMinWidth(635);
         //        primaryStage.setMinHeight(450);

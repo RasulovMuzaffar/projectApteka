@@ -1,6 +1,8 @@
 package sample.model.pojo;
 
-public class Medicine {
+import java.io.Serializable;
+
+public class Medicine implements Serializable{
     private int id;
     private String nameRu;
     private String nameEn;

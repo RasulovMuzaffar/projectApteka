@@ -1,8 +1,9 @@
 package sample.model.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Stock {
+public class Stock implements Serializable {
     private int id;
     private Date validaty;
     private double price;

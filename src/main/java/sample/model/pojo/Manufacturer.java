@@ -1,12 +1,19 @@
 package sample.model.pojo;
 
-public class Manufacturer {
+import java.io.Serializable;
+
+public class Manufacturer implements Serializable {
     private int id;
     private String state;
     private String name;
 
     public Manufacturer() {
     }
+    public Manufacturer(String state, String name) {
+        this.state = state;
+        this.name = name;
+    }
+
 
     public Manufacturer(int id, String state, String name) {
         this.id = id;

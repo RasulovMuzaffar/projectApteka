@@ -158,6 +158,7 @@ public class MedicineDaoImpl implements MedicineDao {
         String query = "UPDATE spr_medicine SET name_ru = ?, name_en = ?, bar_code = ?," +
                 " id_class = ?, id_recomend = ?" +
                 " WHERE id = ?";
+        System.out.println(medicine.toString());
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);) {
@@ -166,7 +167,7 @@ public class MedicineDaoImpl implements MedicineDao {
             ps.setString(3, medicine.getBarCode());
             ps.setInt(4, medicine.getIdClass());
             ps.setInt(5, medicine.getIdRecommend());
-            ps.setInt(5, medicine.getId());
+            ps.setInt(6, medicine.getId());
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);

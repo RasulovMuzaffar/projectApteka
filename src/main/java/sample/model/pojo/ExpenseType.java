@@ -1,6 +1,8 @@
 package sample.model.pojo;
 
-public class ExpenseType {
+import java.io.Serializable;
+
+public class ExpenseType implements Serializable {
     private int id;
     private String name;
     private String description;

@@ -1,6 +1,8 @@
 package sample.model.pojo;
 
-public class Classification {
+import java.io.Serializable;
+
+public class Classification implements Serializable{
     private int id;
     private String name;
 

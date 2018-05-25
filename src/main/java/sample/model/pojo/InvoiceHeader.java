@@ -1,9 +1,10 @@
 package sample.model.pojo;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
-public class InvoiceHeader {
+public class InvoiceHeader implements Serializable {
     private int id;
     private String numb;
     private Date date;
@@ -21,6 +22,13 @@ public class InvoiceHeader {
         this.idSuppler = idSuppler;
         this.idStaff = idStaff;
         this.inputDate = inputDate;
+    }
+
+    public InvoiceHeader(String numb, Date date, int idSuppler, int idStaff) {
+        this.numb = numb;
+        this.date = date;
+        this.idSuppler = idSuppler;
+        this.idStaff = idStaff;
     }
 
     public int getId() {

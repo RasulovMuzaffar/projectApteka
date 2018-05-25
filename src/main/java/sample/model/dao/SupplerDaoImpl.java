@@ -1,7 +1,6 @@
 package sample.model.dao;
 
 import sample.database.DatabaseHandler;
-import sample.model.pojo.Staff;
 import sample.model.pojo.Suppler;
 
 import java.sql.Connection;
@@ -16,7 +15,6 @@ public class SupplerDaoImpl implements SupplerDao {
     @Override
     public List<Suppler> getAllSupplers() {
         String query = "SELECT id, name, address, phone, email FROM spr_supplier";
-        Suppler suppler = new Suppler();
         List<Suppler> list = new ArrayList<>();
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
@@ -65,7 +63,7 @@ public class SupplerDaoImpl implements SupplerDao {
         try (Connection connection = databaseHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);) {
             ps.setString(1, suppler.getName());
-            ps.setString(2, suppler.getAdress());
+            ps.setString(2, suppler.getAddress());
             ps.setString(3, suppler.getPhone());
             ps.setString(4, suppler.getEmail());
             ps.executeUpdate();
@@ -84,7 +82,7 @@ public class SupplerDaoImpl implements SupplerDao {
         try (Connection connection = databaseHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);) {
             ps.setString(1, suppler.getName());
-            ps.setString(2, suppler.getAdress());
+            ps.setString(2, suppler.getAddress());
             ps.setString(3, suppler.getPhone());
             ps.setString(4, suppler.getEmail());
             ps.setInt(5, suppler.getId());

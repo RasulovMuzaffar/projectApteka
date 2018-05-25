@@ -1,19 +1,21 @@
 package sample.model.pojo;
 
-public class Suppler {
+import java.io.Serializable;
+
+public class Suppler implements Serializable {
     private int id;
     private String name;
-    private String adress;
+    private String address;
     private String phone;
     private String email;
 
     public Suppler() {
     }
 
-    public Suppler(int id, String name, String adress, String phone, String email) {
+    public Suppler(int id, String name, String address, String phone, String email) {
         this.id = id;
         this.name = name;
-        this.adress = adress;
+        this.address = address;
         this.phone = phone;
         this.email = email;
     }
@@ -34,12 +36,12 @@ public class Suppler {
         this.name = name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPhone() {
@@ -63,7 +65,7 @@ public class Suppler {
         return "Suppler{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", adress='" + adress + '\'' +
+                ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 '}';

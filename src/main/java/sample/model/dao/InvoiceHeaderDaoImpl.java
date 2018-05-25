@@ -62,9 +62,9 @@ public class InvoiceHeaderDaoImpl implements InvoiceHeaderDao {
         try (Connection connection = databaseHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);) {
             ps.setString(1, invoiceHeader.getNumb());
-            ps.setInt(2, invoiceHeader.getIdSuppler());
-            ps.setInt(3, invoiceHeader.getIdStaff());
-            ps.setTimestamp(4, invoiceHeader.getInputDate());
+            ps.setDate(2, new Date(invoiceHeader.getDate().getTime()));
+            ps.setInt(3, invoiceHeader.getIdSuppler());
+            ps.setInt(4, invoiceHeader.getIdStaff());
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);

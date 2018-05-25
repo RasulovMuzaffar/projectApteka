@@ -37,10 +37,8 @@ public class StaffDaoImpl implements StaffDao {
 
 
     public List<Staff> allStaff() {
-        RoleDao role = new RoleDaoImpl();
         String query = "SELECT id, first_name, last_name, " +
                 "login, password, phone, email, role_id FROM spr_staff";
-        Staff staff = new Staff();
         List<Staff> list = new ArrayList<>();
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
@@ -65,7 +63,6 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public Staff findStaffByLoginPassword(String login, String password) {
-        RoleDao role = new RoleDaoImpl();
         Staff staff = null;
         String query = "SELECT id, first_name, last_name, " +
                 "login, password, phone, email, role_id FROM spr_staff where login = ? and password = ?";
@@ -93,7 +90,6 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public Staff getStaffById(int id) {
-        RoleDao role = new RoleDaoImpl();
         Staff staff = null;
         String query = "SELECT id, first_name, last_name, " +
                 "login, password, phone, email, role_id FROM spr_staff where id = ?";
@@ -120,8 +116,6 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public List<Staff> findStaffByRoleId(int id) {
-        RoleDao rd = new RoleDaoImpl();
-        Role role = rd.findRoleById(id);
         List<Staff> list = new ArrayList<>();
         String query = "SELECT id, first_name, last_name, " +
                 "login, password, phone, email, role_id FROM spr_staff where role_id = ?";

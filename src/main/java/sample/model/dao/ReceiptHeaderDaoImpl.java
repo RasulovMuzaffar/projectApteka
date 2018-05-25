@@ -7,12 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReceiptHeaderDaoImpl implements ReceiptHeaderDao {
     @Override
     public List<ReceiptHeader> allReceiptHeader() {
-        List<ReceiptHeader> list = null;
+        List<ReceiptHeader> list = new ArrayList<>();
         String query = "SELECT id, number, date, id_staff, id_user FROM receipt_header";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
@@ -55,14 +56,14 @@ public class ReceiptHeaderDaoImpl implements ReceiptHeaderDao {
 
     @Override
     public boolean insertReceiptHeader(ReceiptHeader receiptHeader) {
-        String query = "INSERT INTO receipt_header (number, date, id_staff)" +
-                " VALUES (?, ?, ?)";
+        String query = "INSERT INTO receipt_header (number, id_staff)" +
+                " VALUES (?, ?)";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);) {
             ps.setInt(1, receiptHeader.getNumber());
-            ps.setTimestamp(2, receiptHeader.getDate());
             ps.setInt(2, receiptHeader.getIdStaff());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
             return false;
@@ -87,4 +88,23 @@ public class ReceiptHeaderDaoImpl implements ReceiptHeaderDao {
         }
         return true;
     }
+
+    @Override
+    public int maxSize() {
+        int number=1;
+        String query = "SELECT MAX(number) FROM receipt_header";
+        DatabaseHandler databaseHandler = new DatabaseHandler();
+        try (Connection connection = databaseHandler.getConnection();
+             Statement st = connection.createStatement();
+             ResultSet rs = st.executeQuery(query);) {
+            while (rs.next()) {
+                number += rs.getInt(1);
+            }
+        } catch (Exception e) {
+            System.out.println("Exception>>>>> " + e);
+        }
+        return number;
+    }
+
+
 }

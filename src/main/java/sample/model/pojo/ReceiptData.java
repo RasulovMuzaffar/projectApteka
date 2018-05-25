@@ -1,6 +1,8 @@
 package sample.model.pojo;
 
-public class ReceiptData {
+import java.io.Serializable;
+
+public class ReceiptData implements Serializable {
     private int id;
     private int quantity;
     private double price;

@@ -7,12 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ManufacturerDaoImpl  implements ManufacturerDao{
     @Override
     public List<Manufacturer> allManufacturer() {
-        List<Manufacturer> list = null;
+        List<Manufacturer> list = new ArrayList<>();
         String query = "SELECT id, state, name FROM spr_manufacturer";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
@@ -58,6 +59,7 @@ public class ManufacturerDaoImpl  implements ManufacturerDao{
              PreparedStatement ps = connection.prepareStatement(query);) {
             ps.setString(1, manufacturer.getState());
             ps.setString(2, manufacturer.getName());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
             return false;
