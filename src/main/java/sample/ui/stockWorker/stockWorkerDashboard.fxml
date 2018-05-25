@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.stockWorker.StockWorkerController">
+   <children>
+      <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="50.0" style="-fx-background-color: #ededed;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="12.0" text="Склад" textFill="#8d8d8d" AnchorPane.leftAnchor="15.0">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblInfoUsr" layoutX="429.0" layoutY="18.0" text="Здравствуйте, Иван Иванов!" textFill="#8d8d8d" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="15.0">
+                     <font>
+                        <Font name="Arial Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <MaterialDesignIconView fill="#bc0000" glyphName="CLOSE" layoutX="662.0" layoutY="19.0" size="20" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0" />
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: #dfdfdf;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="420.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXButton fx:id="btnManufact" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_manufact" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Производитель" textFill="#ededed">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnSuppler" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_suppler" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Поставщик" textFill="#ededed">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnInvoice" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_invoice" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Поставка" textFill="#ededed">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnMedicine" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_medicine" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Лекарства" textFill="#ededed">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnStock" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_stock" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Склад" textFill="#ededed">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

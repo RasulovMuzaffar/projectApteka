@@ -65,7 +65,6 @@ public class StockWorkerController {
     public void userInfo(Staff stf) {
         staff = stf;
         lblInfoUsr.setText("Здравствуйте, " + staff.getFirstName() + " " + staff.getLastName());
-
         try {
             Parent dashboard = FXMLLoader.load(getClass().getResource("supplerPage.fxml"));
             borderPane.setCenter(dashboard);
@@ -73,7 +72,7 @@ public class StockWorkerController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        inizializeContent();
+        inizializeContent();
     }
 
     private void inizializeContent() {
