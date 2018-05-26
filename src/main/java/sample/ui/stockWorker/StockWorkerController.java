@@ -65,13 +65,13 @@ public class StockWorkerController {
     public void userInfo(Staff stf) {
         staff = stf;
         lblInfoUsr.setText("Здравствуйте, " + staff.getFirstName() + " " + staff.getLastName());
-        try {
-            Parent dashboard = FXMLLoader.load(getClass().getResource("supplerPage.fxml"));
-            borderPane.setCenter(dashboard);
-//        installizeTable();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Parent dashboard = FXMLLoader.load(getClass().getResource("supplerPage.fxml"));
+//            borderPane.setCenter(dashboard);
+////        installizeTable();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         inizializeContent();
     }
 
@@ -80,16 +80,16 @@ public class StockWorkerController {
     }
 
     private void installizeTable() {
-        SupplerDao supplerDao = new SupplerDaoImpl();
-        List<Suppler> list = supplerDao.getAllSupplers();
-
-        supplerName.setCellValueFactory(new PropertyValueFactory<Suppler, String>("name"));
-        supplerAddr.setCellValueFactory(new PropertyValueFactory<Suppler, String>("address"));
-        supplerPhone.setCellValueFactory(new PropertyValueFactory<Suppler, String>("phone"));
-        supplerEMail.setCellValueFactory(new PropertyValueFactory<Suppler, String>("email"));
-        supplerTable.getItems().setAll(list);
-
-        supplerName.setCellFactory(TextFieldTableCell.forTableColumn());
+//        SupplerDao supplerDao = new SupplerDaoImpl();
+//        List<Suppler> list = supplerDao.getAllSupplers();
+//
+//        supplerName.setCellValueFactory(new PropertyValueFactory<Suppler, String>("name"));
+//        supplerAddr.setCellValueFactory(new PropertyValueFactory<Suppler, String>("address"));
+//        supplerPhone.setCellValueFactory(new PropertyValueFactory<Suppler, String>("phone"));
+//        supplerEMail.setCellValueFactory(new PropertyValueFactory<Suppler, String>("email"));
+//        supplerTable.getItems().setAll(list);
+//
+//        supplerName.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
     public void changeNameCellEvent(TableColumn.CellEditEvent editEvent) {
@@ -97,24 +97,24 @@ public class StockWorkerController {
         supplerSelected.setName(editEvent.getNewValue().toString());
     }
 
-    public void btnAddSupplAction(ActionEvent event) throws IOException {
-        SupplerDao supplerDao = new SupplerDaoImpl();
-        Suppler s = new Suppler();
-        s.setName(txtNameSuppl.getText());
-        s.setAddress(txtAddrSuppl.getText());
-        s.setEmail(txtMailSuppl.getText());
-        s.setPhone(txtPhoneSuppl.getText());
-        supplerDao.insertSuppler(s);
-        txtAddrSuppl.setText("");
-        txtMailSuppl.setText("");
-        txtNameSuppl.setText("");
-        txtPhoneSuppl.setText("");
-        installizeTable();
-    }
+//    public void btnAddSupplAction(ActionEvent event) throws IOException {
+//        SupplerDao supplerDao = new SupplerDaoImpl();
+//        Suppler s = new Suppler();
+//        s.setName(txtNameSuppl.getText());
+//        s.setAddress(txtAddrSuppl.getText());
+//        s.setEmail(txtMailSuppl.getText());
+//        s.setPhone(txtPhoneSuppl.getText());
+//        supplerDao.insertSuppler(s);
+//        txtAddrSuppl.setText("");
+//        txtMailSuppl.setText("");
+//        txtNameSuppl.setText("");
+//        txtPhoneSuppl.setText("");
+//        installizeTable();
+//    }
 
     //    @FXML
     public void show_dashboard_suppler(MouseEvent event) throws IOException {
-        Parent dashboard = FXMLLoader.load(getClass().getResource("supplerPage.fxml"));
+        Parent dashboard = FXMLLoader.load(getClass().getResource("contents/supplerPage.fxml"));
         borderPane.setCenter(dashboard);
     }
 

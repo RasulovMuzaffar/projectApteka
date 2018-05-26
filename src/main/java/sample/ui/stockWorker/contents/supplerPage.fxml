@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.stockWorker.StockWorkerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.stockWorker.contents.SupplerPageController">
    <children>
       <Label layoutX="24.0" layoutY="24.0" text="Новый поставщик" textFill="#868686">
          <font>
@@ -64,7 +63,7 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="btnAddSuppl" layoutX="210.0" layoutY="248.0" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #7896CD;" text="Добавить" textFill="WHITE" AnchorPane.leftAnchor="200.0">
+      <JFXButton fx:id="btnAddSuppl" layoutX="210.0" layoutY="248.0" onAction="#btnAddSupplAction" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #7896CD;" text="Добавить" textFill="WHITE" AnchorPane.leftAnchor="200.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
