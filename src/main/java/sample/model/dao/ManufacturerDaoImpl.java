@@ -14,7 +14,7 @@ public class ManufacturerDaoImpl  implements ManufacturerDao{
     @Override
     public List<Manufacturer> allManufacturer() {
         List<Manufacturer> list = new ArrayList<>();
-        String query = "SELECT id, state, name FROM spr_manufacturer";
+        String query = "SELECT id, state, name FROM spr_manufacturer order BY id desc";
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();
              Statement st = connection.createStatement();

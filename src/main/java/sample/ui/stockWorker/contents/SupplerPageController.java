@@ -3,6 +3,7 @@ package sample.ui.stockWorker.contents;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -13,6 +14,7 @@ import sample.model.dao.SupplerDaoImpl;
 import sample.model.pojo.Suppler;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SupplerPageController {
@@ -38,10 +40,13 @@ public class SupplerPageController {
     private TableColumn<Suppler, String> supplerPhone;
     @FXML
     private TableColumn<Suppler, String> supplerEMail;
+    @FXML
+    private TableColumn<Suppler, Button> supplerEdit;
+
 
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         SupplerDao supplerDao = new SupplerDaoImpl();
         List<Suppler> list = supplerDao.getAllSupplers();
 
@@ -49,6 +54,7 @@ public class SupplerPageController {
         supplerAddr.setCellValueFactory(new PropertyValueFactory<Suppler, String>("address"));
         supplerPhone.setCellValueFactory(new PropertyValueFactory<Suppler, String>("phone"));
         supplerEMail.setCellValueFactory(new PropertyValueFactory<Suppler, String>("email"));
+        supplerEdit.setCellValueFactory(new PropertyValueFactory<Suppler,Button>("btnEdit"));
         supplerTable.getItems().setAll(list);
 
         supplerName.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -62,10 +68,13 @@ public class SupplerPageController {
         s.setEmail(txtMailSuppl.getText());
         s.setPhone(txtPhoneSuppl.getText());
         supplerDao.insertSuppler(s);
+
         txtAddrSuppl.setText("");
         txtMailSuppl.setText("");
         txtNameSuppl.setText("");
         txtPhoneSuppl.setText("");
+
+        supplerTable.getItems().add(0,s);
     }
 
 }

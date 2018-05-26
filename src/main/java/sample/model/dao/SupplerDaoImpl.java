@@ -14,7 +14,7 @@ public class SupplerDaoImpl implements SupplerDao {
 
     @Override
     public List<Suppler> getAllSupplers() {
-        String query = "SELECT id, name, address, phone, email FROM spr_supplier";
+        String query = "SELECT id, name, address, phone, email FROM spr_supplier ORDER BY id DESC";
         List<Suppler> list = new ArrayList<>();
         DatabaseHandler databaseHandler = new DatabaseHandler();
         try (Connection connection = databaseHandler.getConnection();

@@ -48,12 +48,17 @@
                               <Font name="Bell MT Bold" size="18.0" />
                            </font>
                         </JFXButton>
+                        <JFXButton fx:id="btnStock" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_stock" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Склад" textFill="#ededed">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
                         <JFXButton fx:id="btnMedicine" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_medicine" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Лекарства" textFill="#ededed">
                            <font>
                               <Font name="Bell MT Bold" size="18.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnStock" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_stock" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Склад" textFill="#ededed">
+                        <JFXButton fx:id="btnMedicine1" alignment="BASELINE_LEFT" onMouseClicked="#show_dashboard_clas" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3F4E6B; -fx-border-color: #ffffff;" text="Категория" textFill="#ededed">
                            <font>
                               <Font name="Bell MT Bold" size="18.0" />
                            </font>
@@ -63,6 +68,9 @@
                </children>
             </AnchorPane>
          </left>
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

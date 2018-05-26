@@ -1,5 +1,8 @@
 package sample.model.pojo;
 
+import com.jfoenix.controls.JFXButton;
+import javafx.scene.control.Button;
+
 import java.io.Serializable;
 
 public class Suppler implements Serializable {
@@ -8,6 +11,7 @@ public class Suppler implements Serializable {
     private String address;
     private String phone;
     private String email;
+    private Button btnEdit;
 
     public Suppler() {
     }
@@ -18,7 +22,17 @@ public class Suppler implements Serializable {
         this.address = address;
         this.phone = phone;
         this.email = email;
+        this.btnEdit = new Button("Edit");
     }
+
+//    public Suppler(int id, String name, String address, String phone, String email, JFXButton btnEdit) {
+//        this.id = id;
+//        this.name = name;
+//        this.address = address;
+//        this.phone = phone;
+//        this.email = email;
+//        this.btnEdit = btnEdit;
+//    }
 
     public int getId() {
         return id;
@@ -58,6 +72,14 @@ public class Suppler implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Button getBtnEdit() {
+        return btnEdit;
+    }
+
+    public void setBtnEdit(Button btnEdit) {
+        this.btnEdit = btnEdit;
     }
 
     @Override

@@ -79,10 +79,11 @@
       </Label>
       <TableView fx:id="supplerTable" editable="true" layoutX="355.0" layoutY="70.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="345.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0">
          <columns>
-            <TableColumn fx:id="supplerName" prefWidth="177.0" text="Наименование" />
-            <TableColumn fx:id="supplerAddr" minWidth="0.0" prefWidth="295.0" text="Адрес" />
-            <TableColumn fx:id="supplerPhone" prefWidth="173.0" text="Телефон" />
-            <TableColumn fx:id="supplerEMail" prefWidth="170.0" text="eMail" />
+            <TableColumn fx:id="supplerName" prefWidth="170.0" text="Наименование" />
+            <TableColumn fx:id="supplerAddr" minWidth="0.0" prefWidth="280.0" text="Адрес" />
+            <TableColumn fx:id="supplerPhone" prefWidth="140.0" text="Телефон" />
+            <TableColumn fx:id="supplerEMail" prefWidth="140.0" text="eMail" />
+            <TableColumn fx:id="supplerEdit" text="Изменить" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

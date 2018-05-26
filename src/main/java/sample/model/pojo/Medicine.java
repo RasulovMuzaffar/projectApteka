@@ -1,5 +1,7 @@
 package sample.model.pojo;
 
+import javafx.scene.control.Button;
+
 import java.io.Serializable;
 
 public class Medicine implements Serializable{
@@ -9,6 +11,7 @@ public class Medicine implements Serializable{
     private String barCode;
     private int idClass;
     private int idRecommend;
+    private Button btnEdit;
 
     public Medicine() {
     }
@@ -20,6 +23,7 @@ public class Medicine implements Serializable{
         this.barCode = barCode;
         this.idClass = idClass;
         this.idRecommend = idRecommend;
+        this.btnEdit = new Button("Изменить");
     }
 
     public int getId() {
@@ -68,6 +72,14 @@ public class Medicine implements Serializable{
 
     public void setIdRecommend(int idRecommend) {
         this.idRecommend = idRecommend;
+    }
+
+    public Button getBtnEdit() {
+        return btnEdit;
+    }
+
+    public void setBtnEdit(Button btnEdit) {
+        this.btnEdit = btnEdit;
     }
 
     @Override

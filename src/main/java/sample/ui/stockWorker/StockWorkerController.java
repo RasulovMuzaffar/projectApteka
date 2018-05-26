@@ -65,17 +65,21 @@ public class StockWorkerController {
     public void userInfo(Staff stf) {
         staff = stf;
         lblInfoUsr.setText("Здравствуйте, " + staff.getFirstName() + " " + staff.getLastName());
-//        try {
-//            Parent dashboard = FXMLLoader.load(getClass().getResource("supplerPage.fxml"));
-//            borderPane.setCenter(dashboard);
-////        installizeTable();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+
         inizializeContent();
     }
 
+    private void initialize() {
+    }
+
     private void inizializeContent() {
+        Parent dashboard = null;
+        try {
+            dashboard = FXMLLoader.load(getClass().getResource("contents/manufacturerPage.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        borderPane.setCenter(dashboard);
 
     }
 
@@ -118,16 +122,24 @@ public class StockWorkerController {
         borderPane.setCenter(dashboard);
     }
 
-    public void show_dashboard_manufact(MouseEvent event) {
-
+    public void show_dashboard_manufact(MouseEvent event) throws IOException {
+        Parent dashboard = FXMLLoader.load(getClass().getResource("contents/manufacturerPage.fxml"));
+        borderPane.setCenter(dashboard);
     }
 
     public void show_dashboard_invoice(MouseEvent event) {
     }
 
-    public void show_dashboard_medicine(MouseEvent event) {
+    public void show_dashboard_medicine(MouseEvent event) throws IOException {
+        Parent dashboard = FXMLLoader.load(getClass().getResource("contents/medicinePage.fxml"));
+        borderPane.setCenter(dashboard);
     }
 
     public void show_dashboard_stock(MouseEvent event) {
     }
+    public void show_dashboard_clas(MouseEvent event) throws IOException {
+        Parent dashboard = FXMLLoader.load(getClass().getResource("contents/classificationPage.fxml"));
+        borderPane.setCenter(dashboard);
+    }
+
 }

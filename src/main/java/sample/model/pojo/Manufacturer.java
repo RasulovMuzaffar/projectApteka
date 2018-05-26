@@ -1,17 +1,21 @@
 package sample.model.pojo;
 
+import javafx.scene.control.Button;
+
 import java.io.Serializable;
 
 public class Manufacturer implements Serializable {
     private int id;
     private String state;
     private String name;
+    private Button btnEdit;
 
     public Manufacturer() {
     }
     public Manufacturer(String state, String name) {
         this.state = state;
         this.name = name;
+        this.btnEdit = btnEdit;
     }
 
 
@@ -19,6 +23,7 @@ public class Manufacturer implements Serializable {
         this.id = id;
         this.state = state;
         this.name = name;
+        this.btnEdit = new Button("Изменить");
     }
 
     public int getId() {
@@ -43,6 +48,14 @@ public class Manufacturer implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Button getBtnEdit() {
+        return btnEdit;
+    }
+
+    public void setBtnEdit(Button btnEdit) {
+        this.btnEdit = btnEdit;
     }
 
     @Override
