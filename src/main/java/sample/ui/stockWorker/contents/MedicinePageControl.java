@@ -21,7 +21,7 @@ import sample.model.pojo.Suppler;
 
 import java.util.List;
 
-public class MedicinePage {
+public class MedicinePageControl {
     @FXML
     private TextField txtNameRu;
     @FXML
