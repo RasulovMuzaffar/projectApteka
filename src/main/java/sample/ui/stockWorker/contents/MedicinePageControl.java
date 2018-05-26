@@ -19,7 +19,9 @@ import sample.model.pojo.Classification;
 import sample.model.pojo.Medicine;
 import sample.model.pojo.Suppler;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MedicinePageControl {
     @FXML
@@ -43,6 +45,7 @@ public class MedicinePageControl {
     @FXML
     private TableColumn<Medicine, Button> medEdit;
 
+    Map<String,Classification> map = new HashMap<>();
     @FXML
     public void initialize() {
         MedicineDao medicineDao = new MedicineDaoImpl();
@@ -63,24 +66,29 @@ public class MedicinePageControl {
 
         for (Classification c : lc) {
             cbClas.getItems().add(c.getName());
+            map.put(c.getName(),c);
         }
         cbClas.getSelectionModel().selectFirst();
     }
 
 
     public void btnAddMedAction(ActionEvent event) {
-//        MedicineDao md= new MedicineDaoImpl();
-//        Medicine m = new Medicine();
-//        m.setNameRu(txtNameRu.getText());
-//        m.setNameEn(txtNameEn.getText());
-//        m.setBarCode(txtBarCode.getText());
-//        md.insertMedicine(m);
-//
-//        txtNameRu.setText("");
-//        txtNameEn.setText("");
-//        txtBarCode.setText("");
-//
-//        medTable.getItems().add(0,m);
-        System.out.println(cbClas.getValue());
+        MedicineDao md= new MedicineDaoImpl();
+        Medicine m = new Medicine();
+        m.setNameRu(txtNameRu.getText());
+        m.setNameEn(txtNameEn.getText());
+        m.setBarCode(txtBarCode.getText());
+        int key = map.get(cbClas.getValue()).getId();
+        m.setIdClass(key);
+        m.setIdRecommend(1);
+        md.insertMedicine(m);
+
+        txtNameRu.setText("");
+        txtNameEn.setText("");
+        txtBarCode.setText("");
+
+        medTable.getItems().add(0,m);
+        System.out.println("id "+key +", name "+cbClas.getValue());
+
     }
 }
